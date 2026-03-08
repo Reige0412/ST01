@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+	<head>
+
+		<meta charset="UTF-8" />
+		<title>サンプルサイト_トップ | Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+
+	</head>
+
+	<body>
+		<div class="page-wrap">
+		<!-- ヘッダー -->
+			<header class="site-header">
+				<div class="header-inner">
+      					<div class="header-left">
+          					<div class="logo-image">
+
+							<!-- <img src="header-logo.png" alt="Site Logo" /> -->
+          		
+						</div>
+          		
+						<div class="site-title-block">
+            	
+							<div class="site-title-main">ブランド名 / サイト名</div>
+							<div class="site-title-sub">Tagline or short description</div>
+        					</div>
+					</div>
+
+        				<div class="header-right">
+        					<button class="header-button" type="button">
+        						<span class="header-button-icon"></span>
+        						<span>ヘルプ</span>
+        					</button>
+        
+						<button class="header-button" type="button">
+        						<span class="header-button-icon"></span>
+            						<span>ログイン</span>
+        					</button>
+       					</div>
+				</div>
+			</header>
+
+			<!-- メイン -->
+			<main>
+
+				<div class="main-inner">
+				<!-- タイトル + 言語タブ -->
+
+					<div class="title-row">
+
+						<div class="page-title-block">
+							<h1 class="page-title">ページタイトル</h1>
+							<p class="page-subtitle">言語切り替えタブ</p>
+						</div>
+
+						<div class="lang-tabs" id="langTabs">
+							<button class="lang-tab active" data-lang="ja">日本語</button>
+							<button class="lang-tab" data-lang="us">US</button>
+							<button class="lang-tab" data-lang="uk">UK</button>
+							<button class="lang-tab" data-lang="cd">CD</button>
+        						<button class="lang-tab" data-lang="zh">中分</button>
+        						<button class="lang-tab" data-lang="kr">ハングル</button>
+        						<button class="lang-tab" data-lang="vn">ベトナム</button>
+						</div>
+					</div>
+
+					<!-- コンテンツカード -->
+					<section class="content-card">
+						<div class="content-header">
+        						<div class="content-header-left">
+								<div class="content-heading">メインコンテンツヘッダー</div>
+              							<div class="content-heading-sub">言語ごとに本文を切り替えます。</div>
+            						</div>
+
+            						<div class="content-header-right">
+             							<span class="content-header-badge">Multi-language</span>
+            						</div>
+						</div>
+
+        					<div class="content-body">
+		
+							<!-- 日本語 -->
+							<div class="lang-section active" data-lang="ja">
+        
+								<p>ここは日本語の本文エリアです。</p>
+ 								<ul>
+									<li>ポイント1：日本語向けの説明</li>	
+									<li>ポイント2：ローカライズされた表現</li>
+									<li>ポイント3：画像やボタンも共通レイアウトで利用可能</li>
+								</ul>
+							</div>
+
+
+							<!-- US -->
+							<div class="lang-section" data-lang="us">
+								<p>This is the US English content area.</p>
+							</div>
+
+
+							<!-- UK -->
+							<div class="lang-section" data-lang="uk">
+								<p>This is the UK English content area.</p>
+							</div>
+			
+
+							<!-- CD -->
+							<div class="lang-section" data-lang="cd">
+              							<p>CD向けプレースホルダーコンテンツ。</p>
+							</div>
+
+
+							<!-- Chinese -->
+							<div class="lang-section" data-lang="zh">
+              							<p>这里是中文内容区域。</p>
+            						</div>
+
+							<!-- Korean -->
+							<div class="lang-section" data-lang="kr">
+              							<p>한국어 콘텐츠 영역입니다.</p>
+            						</div>
+
+							<!-- Vietnamese -->
+							<div class="lang-section" data-lang="vn">
+              							<p>Đây là nội dung tiếng Việt.</p>
+            						</div>
+        					</div>
+
+
+						<!-- CTA -->
+						<div class="cta-area">
+				
+							<button class="cta-button" type="button">
+								<span class="cta-icon"></span>
+								<span>今すぐはじめる</span>
+							</button>
+
+							<button class="cta-button dark" type="button">
+								<span class="cta-icon"></span>
+								<span>資料をダウンロード</span>
+							</button>
+						</div>
+					</section>
+				</div>
+			</main>
+
+			<!-- フッター -->
+			<footer class="site-footer">
+				<div class="footer-inner">
+        				<div class="footer-left">
+          					<div class="footer-logo"></div>
+          					<span>© 2026 Brand Name. All rights reserved.</span>
+        				</div>
+
+        				<div class="footer-right">
+          					<a href="#" class="footer-link">利用規約</a>
+          					<a href="#" class="footer-link">プライバシー</a>
+          					<a href="#" class="footer-link">お問い合わせ</a>
+        				</div>	
+      				</div>
+			</footer>
+		</div>
+
+  		<script>	
+			const tabs = document.querySelectorAll(".lang-tab");
+    			const sections = document.querySelectorAll(".lang-section");
+
+    			tabs.forEach((tab) => {
+      				tab.addEventListener("click", () => {
+        				const lang = tab.dataset.lang;
+
+        				tabs.forEach((t) => t.classList.remove("active"));
+        				tab.classList.add("active");
+
+        				sections.forEach((sec) => {
+          					sec.classList.toggle("active", sec.dataset.lang === lang);
+        				});
+      				});
+    			});
+  		</script>
+	</body>
+</html>
